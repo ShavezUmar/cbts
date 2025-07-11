@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'explore.css' %}">
+    <title>Explore Page</title>
+</head>
+<body>
+    <div class="box">
+        <div class="left">
+            <header class="user-info">
+                <div class="info-card">
+                    <p>Username: {{ user.username }}</p>
+                </div>
+                <div class="info-card">
+                    <p>Balance: {{ user.balance }}</p>
+                </div>
+                <div class="info-card">
+                    <p>Tickets: {{ tickets_booked }}</p>
+                </div>
+            </header>
+            <div class="info-section">
+                <h2>Museums List</h2>
+                <ul>
+                    {% for museum in museums %}
+                        <li style="display: flex; align-items: center; margin-bottom: 20px;">
+                            {% if museum.image == 201 %}
+                                <img src="{% static 'images/201.png' %}" style="width: 100px; height: 100px; object-fit: cover; margin-right: 20px; border-radius: 10px;">
+                            {% elif museum.image == 202 %}
+                                <img src="{% static 'images/202.png' %}" style="width: 100px; height: 100px; object-fit: cover; margin-right: 20px; border-radius: 10px;">
+                            {% elif museum.image == 203 %}
+                                <img src="{% static 'images/203.png' %}" style="width: 100px; height: 100px; object-fit: cover; margin-right: 20px; border-radius: 10px;">
+                                {% else %}
+                                <p>Image not found</p>
+                            {% endif %}
+                            Museum ID: {{ museum.mid }}<br>
+                            Name:   {{ museum.mname }}<br>
+                            Location:   {{ museum.location }}<br>
+                            Description:    {{ museum.description }}<br>
+                            Timings:    {{ museum.timings }}<br>
+                            Ticket price:   ₹{{ museum.ticket_price }}<br>
+                            Tickets remaining:  {{ slots_remaining }}
+                        </li>
+                    {% empty %}
+                        <li>No bookings yet.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <header>
+                <h2>Chatbot</h2>
+            </header>
+            <div class="chat-container">
+                {% for message in messages %}
+                    {% if message.sender == 'user' %}
+                        <div class="message user-message">{{ message.text }}</div>
+                    {% else %}
+                        <div class="message bot-message">{{ message.text }}</div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <form method="POST" action="" class="chat-form">
+                {% csrf_token %}
+                <input type="text" name="user_message" placeholder="Type your message..." autocomplete="off" required>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

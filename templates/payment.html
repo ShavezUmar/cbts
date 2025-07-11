@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'payment.css' %}">
+    <title>Payment Page</title>
+</head>
+<body>
+    <div class="box">
+        <div class="left">
+            <header class="user-info">
+                <div class="info-card">
+                    <p>Username: {{ user.username }}</p>
+                </div>
+                <div class="info-card">
+                    <p>Balance: {{ user.balance }}</p>
+                </div>
+                <div class="info-card">
+                    <p>Tickets: {{ tickets_booked }}</p>
+                </div>
+            </header>
+            <div class="info-section">
+                <h2>Add balance</h2>
+                <form method="POST" class="ticket-form">
+                    {% csrf_token %}
+                    <input type="hidden" name="form_id" value="L">
+                    <label for="card_type">Card Type:</label>
+                    <select id="card_type" name="card_type" required>
+                        <option value="credit">Credit Card</option>
+                        <option value="debit">Debit Card</option>
+                    </select>
+
+                    <label for="card_number">Card Number:</label>
+                    <input type="text" id="card_number" name="card_number" maxlength="16" pattern="\d{16}" placeholder="16-digit card number" required>
+
+                    <label for="exp_date">Expiry Date:</label>
+                    <input type="text" id="exp_date" name="exp_date" maxlength="5" pattern="\d{2}/\d{2}" placeholder="Expiry date" required>
+
+                    <label for="card_cvv">CVV:</label>
+                    <input type="password" id="card_cvv" name="card_cvv" maxlength="3" pattern="\d{3}" placeholder="3-digit CVV" required>
+ 
+                    <label for="amount">Amount to Add:</label>
+                    <input type="number" id="amount" name="amount" min="1" placeholder="Enter amount" required>
+
+                    <button type="submit" class="btn">Add Balance</button>
+                </form>
+            </div>
+        </div>
+        <div class="right">
+            <header>
+                <h2>Chatbot</h2>
+            </header>
+            <div class="chat-container">
+                {% for message in messages %}
+                    {% if message.sender == 'user' %}
+                        <div class="message user-message">{{ message.text }}</div>
+                    {% else %}
+                        <div class="message bot-message">{{ message.text }}</div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <form method="POST" action="" class="chat-form">
+                {% csrf_token %}
+                <input type="hidden" name="form_id" value="R">
+                <input type="text" name="user_message" placeholder="Type your message..." autocomplete="off" required>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

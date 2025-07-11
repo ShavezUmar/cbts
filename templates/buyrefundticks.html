@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'buyrefundticks.css' %}">
+    <title>Main Page</title>
+</head>
+<body>
+    <div class="box">
+        <div class="left">
+            <header class="user-info">
+                <div class="info-card">
+                    <p>Username: {{ user.username }}</p>
+                </div>
+                <div class="info-card">
+                    <p>Balance: {{ user.balance }}</p>
+                </div>
+                <div class="info-card">
+                    <p>Tickets: {{ tickets_booked }}</p>
+                </div>
+            </header>
+            <div class="info-section">
+                <h2>Buying/Refunding tickets</h2>
+                <form method="POST" class="ticket-form">
+                    {% csrf_token %}
+                    <input type="hidden" name="form_id" value="L">
+                    <label for="action">Action:</label>
+                    <select id="action" name="action" required>
+                        <option value="buy">Buy Tickets</option>
+                        <option value="refund">Refund Tickets</option>
+                    </select>
+
+                    <label for="museum_or_booking_id">Museum ID / Booking ID:</label>
+                    <input type="text" id="museum_or_booking_id" name="museum_or_booking_id" placeholder="Enter Museum ID (for Buy) or Booking ID (for Refund)" autocomplete="off" required>
+                    
+                    <label for="num_tickets">Number of Tickets:</label>
+                    <input type="number" id="num_tickets" name="num_tickets" min="1" placeholder="Enter number of tickets" required>
+
+                    <label for="booking_date">Date:</label>
+                    <input type="date" id="booking_date" name="booking_date" required>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="right">
+            <header>
+                <h2>Chatbot</h2>
+            </header>
+            <div class="chat-container">
+                {% for message in messages %}
+                    {% if message.sender == 'user' %}
+                        <div class="message user-message">{{ message.text }}</div>
+                    {% else %}
+                        <div class="message bot-message">{{ message.text }}</div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <form method="POST" action="" class="chat-form">
+                {% csrf_token %}
+                <input type="hidden" name="form_id" value="R">
+                <input type="text" name="user_message" placeholder="Type your message..." autocomplete="off" required>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

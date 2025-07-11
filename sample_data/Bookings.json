@@ -1,0 +1,96 @@
+[{
+  "_id": {
+    "$oid": "675e6942b534f8f8b12be23d"
+  },
+  "bid": 301,
+  "uid": 101,
+  "mid": 201,
+  "booking_date": "2024-12-16",
+  "tickets_booked": 2,
+  "total_price": 500,
+  "payment_status": "paid"
+},
+{
+  "_id": {
+    "$oid": "675e758cb534f8f8b12be241"
+  },
+  "bid": 302,
+  "uid": 101,
+  "mid": 201,
+  "booking_date": "2024-12-17",
+  "tickets_booked": 2,
+  "total_price": 750,
+  "payment_status": "paid"
+},
+{
+  "_id": {
+    "$oid": "675fbffa34e46bba7363cdc7"
+  },
+  "bid": 304,
+  "uid": 101,
+  "mid": 201,
+  "booking_date": "2024-12-19",
+  "tickets_booked": 4,
+  "total_price": 1000,
+  "payment_status": "paid"
+},
+{
+  "_id": {
+    "$oid": "67625605b992899cbc505b36"
+  },
+  "bid": 311,
+  "uid": 101,
+  "mid": 202,
+  "booking_date": "2024-12-19",
+  "tickets_booked": 2,
+  "total_price": 300,
+  "payment_status": "Paid"
+},
+{
+  "_id": {
+    "$oid": "676258a2b992899cbc505b37"
+  },
+  "bid": 316,
+  "uid": 101,
+  "mid": 203,
+  "booking_date": "2024-12-19",
+  "tickets_booked": 2,
+  "total_price": 1000,
+  "payment_status": "Paid"
+},
+{
+  "_id": {
+    "$oid": "676271bd1947a26628578e0a"
+  },
+  "bid": 359,
+  "uid": 101,
+  "mid": 202,
+  "booking_date": "2024-12-18",
+  "tickets_booked": 4,
+  "total_price": 600,
+  "payment_status": "Paid"
+},
+{
+  "_id": {
+    "$oid": "6762c41ef9a51c3ac4677d68"
+  },
+  "bid": 306,
+  "uid": 101,
+  "mid": 203,
+  "booking_date": "2024-12-19",
+  "tickets_booked": 5,
+  "total_price": 1000,
+  "payment_status": "Paid"
+},
+{
+  "_id": {
+    "$oid": "676cf1d9c79eb156468d0fa3"
+  },
+  "bid": 321,
+  "uid": 101,
+  "mid": 203,
+  "booking_date": "2024-12-18",
+  "tickets_booked": 2,
+  "total_price": 1000,
+  "payment_status": "Paid"
+}]

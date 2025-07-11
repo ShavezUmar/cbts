@@ -1,0 +1,230 @@
+body{
+    display: flex;
+    background-color: rgb(134, 43, 179);
+    justify-content: center;
+    align-items:center;
+    margin: 0;
+    height: 100vh;
+}
+
+.box{
+    border: 10px solid rgb(79, 22, 108);
+    border-radius: 30px;
+    background-color: #e5e5e5;
+    color: rgb(79, 22, 108);
+    font-family:'Georgia';
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:stretch;
+    height: 95vh;
+    width: 95vw;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+}
+
+.left, .right{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.left{
+    background-color: #f0f0f0;
+    border-right: 5px solid rgb(79,22,108);
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.right{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-left: 5px solid rgb(79,22,108);
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.user-info{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(134, 43, 179);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: white;
+    font-family: 'Georgia';
+}
+
+.user-info .info-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(79, 22, 108);
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 10px;
+    min-width: 150px;
+    font-size: 14px;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.user-info .info-card p{
+    margin: 5px 0 0;
+    font-weight: bold;
+}
+
+.header h1{
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.info-section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    border: 2px solid #4f166c;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #4f166c;
+    box-sizing: border-box;
+    margin-top: 20px;
+    width: 90%;
+    text-align: left;
+}
+
+.info-section h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.ticket-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4f166c;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: fit-content;
+}
+
+button:hover {
+    background-color: #803c9f;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="date"] {
+    color: #333;
+    background-color: #fff;
+}
+
+.chat-container {
+    width: 90%;
+    height: 80%;
+    overflow-y: auto;
+    background-color: white;
+    border: 2px solid rgb(79, 22, 108);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    max-width: 60%;
+    margin: 8px 10px;
+    padding: 10px;
+    word-wrap: break-word;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: rgb(134, 43, 179);
+    color: white;
+    text-align: left;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.bot-message {
+    align-self: flex-start;
+    background-color: #f1f1f1;
+    color: rgb(79, 22, 108);
+    text-align: left;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.chat-form {
+    display: flex;
+    margin-top: 10px;
+}
+
+.chat-form input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid rgb(79, 22, 108);
+    border-radius: 10px 0 0 10px;
+    outline: none;
+}
+
+.chat-form button {
+    padding: 10px 20px;
+    background-color: rgb(79, 22, 108);
+    color: white;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+}
+
+.chat-form button:hover {
+    background-color: rgb(100, 30, 140);
+}

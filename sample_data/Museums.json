@@ -1,0 +1,75 @@
+[{
+  "_id": {
+    "$oid": "676249b238dcd7ac1f7bce56"
+  },
+  "mid": 201,
+  "mname": "Natural History Museum",
+  "location": "123 Heritage Lane, Springfield",
+  "description": "Discover the wonders of our natural world, from towering dinosaurs to sparkling minerals. Perfect for all ages!",
+  "timings": {
+    "open": "10:00 AM",
+    "close": "06:00 PM"
+  },
+  "ticket_price": 100,
+  "ticket_slots": [
+    {
+      "date": "2024-12-18",
+      "remaining": 51
+    },
+    {
+      "date": "2024-12-19",
+      "remaining": 40
+    }
+  ],
+  "image": 201
+},
+{
+  "_id": {
+    "$oid": "67624a1738dcd7ac1f7bce57"
+  },
+  "mid": 202,
+  "mname": "Art & Sculpture Gallery",
+  "location": "456 Renaissance Blvd, Art City",
+  "description": "A celebration of creativity showcasing timeless paintings, intricate sculptures, and modern art installations.",
+  "timings": {
+    "open": "09:00 AM",
+    "close": "05:00 PM"
+  },
+  "ticket_price": 150,
+  "ticket_slots": [
+    {
+      "date": "2024-12-18",
+      "remaining": 26
+    },
+    {
+      "date": "2024-12-19",
+      "remaining": 18
+    }
+  ],
+  "image": 202
+},
+{
+  "_id": {
+    "$oid": "67624a9138dcd7ac1f7bce58"
+  },
+  "mid": 203,
+  "mname": "Science Exploratorium",
+  "location": "789 Innovation Ave, Technoville",
+  "description": "Dive into the world of science and technology with hands-on exhibits and interactive demonstrations.",
+  "timings": {
+    "open": "11:00 AM",
+    "close": "08:00 PM"
+  },
+  "ticket_price": 200,
+  "ticket_slots": [
+    {
+      "date": "2024-12-18",
+      "remaining": 23
+    },
+    {
+      "date": "2024-12-19",
+      "remaining": 3
+    }
+  ],
+  "image": 203
+}]
