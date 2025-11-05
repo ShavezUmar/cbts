@@ -15,8 +15,8 @@ This is a Django-based web application for booking museum tickets through a chat
 
 2. Set up the virtual environment
 
-   python -m venv env
-   source env\Scripts\activate
+   1. python -m venv env
+   2. source env\Scripts\activate
 
 3. Install dependencies
 
